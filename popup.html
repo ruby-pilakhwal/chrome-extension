@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multilingual Voice Translator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Voice Translator</h2>
+    
+    <div class="language-selectors">
+      <select id="sourceLanguage">
+        <option value="en-US">English</option>
+        <option value="ar-SA">Arabic</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="fr-FR">French</option>
+        <option value="de-DE">German</option>
+        <option value="hi-IN">Hindi</option>
+        <option value="id-ID">Indonesian</option>
+        <option value="ga-IE">Irish</option>
+        <option value="it-IT">Italian</option>
+        <option value="ja-JP">Japanese</option>
+        <option value="ko-KR">Korean</option>
+        <option value="pl-PL">Polish</option>
+        <option value="pt-PT">Portuguese</option>
+        <option value="ru-RU">Russian</option>
+        <option value="es-ES">Spanish</option>
+        <option value="tr-TR">Turkish</option>
+        <option value="vi-VN">Vietnamese</option>
+      </select>
+      
+      <select id="targetLanguage">
+        <option value="en">English</option>
+        <option value="ar">Arabic</option>
+        <option value="zh">Chinese</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="hi">Hindi</option>
+        <option value="id">Indonesian</option>
+        <option value="ga">Irish</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="pl">Polish</option>
+        <option value="pt">Portuguese</option>
+        <option value="ru">Russian</option>
+        <option value="es">Spanish</option>
+        <option value="tr">Turkish</option>
+        <option value="vi">Vietnamese</option>
+      </select>
+    </div>
+
+    <div class="button-container">
+      <button id="startRecording" class="control-button">Start Recording</button>
+      <button id="stopRecording" class="control-button" disabled>Stop Recording</button>
+      <button id="manualTranslate" class="control-button">Translate Again</button>
+    </div>
+    
+    <div class="results">
+      <div class="original-text">
+        <h3>Original Text</h3>
+        <p id="originalText"></p>
+      </div>
+      
+      <div class="translated-text">
+        <h3>Translated Text</h3>
+  <p id="translatedText"></p>
+  <div class="button-group">
+    <button id="copyTranslation">Copy Translation</button>
+    <button id="speakTranslation">
+      <span class="icon">🔊</span> Speak
+    </button>
+  </div>
+      </div>
+
+    </div>
+
+    <div class="voice-controls">
+      <label>Speed: <input type="range" id="rateRange" min="0.5" max="2" step="0.1" value="1"></label>
+      <label>Pitch: <input type="range" id="pitchRange" min="0.5" max="2" step="0.1" value="1"></label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
