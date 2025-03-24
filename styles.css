@@ -62,6 +62,7 @@ select {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  gap: 10px;
 }
 
 .control-button {

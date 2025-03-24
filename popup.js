@@ -257,20 +257,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle speech events
     utterance.onstart = () => {
       isSpeaking = true;
-      speakButton.innerHTML = '<span class="icon">⏹️</span> Stop';
+      speakButton.innerHTML = 'Stop';
       speakButton.classList.add('speaking');
     };
 
     utterance.onend = () => {
       isSpeaking = false;
-      speakButton.innerHTML = '<span class="icon">🔊</span> Speak';
+      speakButton.innerHTML = 'Speak';
       speakButton.classList.remove('speaking');
     };
 
     utterance.onerror = (event) => {
       console.error('Speech synthesis error:', event);
       isSpeaking = false;
-      speakButton.innerHTML = '<span class="icon">🔊</span> Speak';
+      speakButton.innerHTML = 'Speak';
       speakButton.classList.remove('speaking');
     };
 
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (speechSynthesis.speaking) {
       speechSynthesis.cancel();
       isSpeaking = false;
-      speakButton.innerHTML = '<span class="icon">🔊</span> Speak';
+      speakButton.innerHTML = 'Speak';
       speakButton.classList.remove('speaking');
     }
   }
@@ -297,4 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('unload', () => {
     stopSpeaking();
   });
+
+  const voices = window.speechSynthesis.getVoices();
+  console.log(voices);
 }); 
